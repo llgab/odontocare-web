@@ -1,0 +1,35 @@
+# OdontoCare - Web System & Blog
+
+*(For the English version, please scroll down)*
+
+## Português
+
+O **OdontoCare** é uma aplicação web completa desenvolvida como projeto de portfólio, simulando o ambiente digital de uma clínica odontológica moderna. O projeto une um site institucional elegante e responsivo a um sistema dinâmico de gerenciamento de conteúdo (CMS) construído do zero.
+
+### Principais Funcionalidades
+- **Site Institucional:** Páginas de serviços, sobre nós, equipe e contato com design moderno e responsivo.
+- **Painel Administrativo Seguro:** Sistema de autenticação para gestão do conteúdo.
+- **Blog Dinâmico (CRUD):** Criação, edição, exclusão e destaque de artigos.
+- **Gestão de Mídia Avançada:** Suporte para upload e validação de imagens (JPG, PNG, WEBP) e vídeos (MP4, WEBM) diretamente no painel.
+
+### Tecnologias Utilizadas
+- **Front-end:** HTML5, CSS3, JavaScript, Bootstrap
+- **Back-end:** PHP (utilizando PDO para segurança contra SQL Injection)
+- **Banco de Dados:** MySQL
+
+---
+
+## English
+
+**OdontoCare** is a full-stack web application developed as a portfolio project, simulating the digital environment of a modern dental clinic. The project combines an elegant, responsive institutional website with a custom-built, dynamic Content Management System (CMS).
+
+### Key Features
+- **Institutional Website:** Services, about us, team, and contact pages with a modern, responsive design.
+- **Secure Admin Dashboard:** Authentication system for content management.
+- **Dynamic Blog (CRUD):** Create, edit, delete, and feature blog articles.
+- **Advanced Media Management:** Support for uploading and validating images (JPG, PNG, WEBP) and videos (MP4, WEBM) directly from the dashboard.
+
+### Technologies Used
+- **Front-end:** HTML5, CSS3, JavaScript, Bootstrap
+- **Back-end:** PHP (using PDO for SQL Injection prevention)
+- **Database:** MySQL

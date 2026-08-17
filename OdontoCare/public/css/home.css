@@ -1,0 +1,681 @@
+/* ===== INDEX PAGE SPECIFIC STYLES ===== */
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  overflow: hidden;
+  background: none !important; /* ✅ force remove any background */
+  color: #fff;
+}
+
+/* ✅ Image: full width, no cropping, no bars */
+.hero picture,
+.hero img.hero-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  margin: 0;
+  padding: 0;
+  background: none !important;
+}
+
+/* ✅ Keep overlays above image */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(7, 64, 109, 0.85),
+    rgba(139, 205, 167, 0.5)
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ✅ Text content above overlays */
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  padding: 20px 5%;
+  color: #fff;
+  text-align: left;
+  animation: fadeInUp 1.2s ease;
+}
+
+.hero h1 {
+  font-family: "Figtree", sans-serif;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin: 0;
+  color: white;
+}
+
+.logo-text {
+  font-weight: 500;
+}
+
+.logo-green {
+  color: var(--secondary);
+}
+
+/* SECTION TITLES */
+.section-title {
+  position: relative;
+  margin-bottom: 3rem;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80% !important;
+  height: 3px;
+  background-color: var(--secondary);
+  border-radius: 2px;
+}
+
+/* SERVICES ACCORDION */
+.services-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-item {
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: var(--transition);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--secondary);
+}
+
+.service-header {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-light) 50%, var(--white) 100%);
+  border: none;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.service-header:hover {
+  background: linear-gradient(135deg, var(--secondary-light) 0%, var(--secondary-light) 50%, var(--white) 100%);
+}
+
+.service-header h3 {
+  color: var(--primary-dark);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+}
+
+.service-icon {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: var(--transition);
+  margin-left: 1rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+.service-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  background-color: var(--white);
+  padding: 0 2rem;
+}
+
+.service-content p {
+  margin: 0;
+  color: var(--text-dark);
+  line-height: 1.7;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.1s;
+  padding: 1rem 0;
+}
+
+/* Active state */
+.service-item.active {
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-hover);
+}
+
+.service-item.active .service-header {
+  background: linear-gradient(135deg, var(--secondary-light) 0%, var(--white) 100%);
+}
+
+.service-item.active .service-content {
+  max-height: 600px;
+  padding: 1rem 2rem;
+}
+
+.service-item.active .service-content p {
+  opacity: 1;
+}
+
+.service-item.active .service-icon {
+  transform: rotate(45deg);
+}
+
+/* PROGRAM CARD */
+.program-section {
+  padding: 5rem 1.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+.program-card {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--white) 0%, var(--secondary-light) 100%);
+  border: 2px solid var(--secondary-light);
+  box-shadow: var(--shadow);
+  padding: 3rem 2rem;
+  transition: var(--transition);
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--secondary);
+}
+
+.program-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--white);
+  font-size: 2.5rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.program-title {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.program-description {
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* BLOG CARDS */
+.blog-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  height: 100%;
+  border: none;
+  border: 2px solid var(--primary-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--secondary);
+}
+
+.blog-image {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.blog-card:hover img {
+  transform: scale(1.1);
+}
+
+/* VIDEO THUMBNAIL STYLES */
+.video-thumb-container {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+}
+
+.video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .video-thumb {
+  transform: scale(1.1);
+}
+
+.video-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+
+.blog-card:hover .video-play-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.blog-date {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 1.2;
+  z-index: 2;
+}
+
+/* Adjust date position when video badge is present */
+.video-thumb-container .blog-date {
+  right: 80px; /* Move left to avoid overlapping with video badge */
+}
+
+.blog-date span:first-child {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.blog-date span:last-child {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.blog-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blog-card .card-body h5 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.blog-card .card-body p {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.blog-card .card-body .d-flex {
+  margin-top: auto;
+}
+
+/* When showing all services on mobile */
+.services-show-all .service-item {
+  display: block !important;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+/* TABLET (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero-content {
+    padding: 15px 4%;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .service-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-content {
+    padding: 0 1.5rem;
+  }
+
+  .program-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .blog-card .card-body h5 {
+    font-size: 1.2rem;
+  }
+
+  /* Video thumbnail adjustments */
+  .video-thumb-container,
+  .blog-card img {
+    height: 220px;
+  }
+
+  .video-play-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+/* MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero {
+    display: block; /* ✅ remove flex so it only wraps content */
+    height: auto !important;
+    background: none !important;
+  }
+
+  .hero::before,
+  .hero::after {
+    display: block;
+    height: 100%;
+  }
+
+  .hero picture,
+  .hero img.hero-bg {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    background: none !important;
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    padding: 15px;
+    background: linear-gradient(
+      to top,
+      rgba(7, 64, 109, 0.6),
+      rgba(7, 64, 109, 0)
+    );
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  /* ===== SECTIONS ===== */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== SERVICES ===== */
+  .service-header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .service-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-content {
+    padding: 0 1.5rem;
+  }
+
+  .service-item:nth-child(4),
+  .service-item:nth-child(5) {
+    display: none; /* hide last two on mobile */
+  }
+
+  /* ===== PROGRAM ===== */
+  .program-section {
+    padding: 3rem 1rem;
+  }
+
+  .program-card {
+    padding: 2rem 1.2rem;
+    border-radius: 15px;
+  }
+
+  .program-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .program-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .program-description {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    text-align: left;
+  }
+
+  /* ===== BLOG ===== */
+  .video-thumb-container,
+  .blog-card img {
+    height: 200px;
+  }
+
+  .video-play-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .video-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .blog-card .card-body {
+    padding: 1.25rem;
+  }
+
+  .blog-card .card-body h5 {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 250px;
+    margin: 5px 0;
+  }
+}
+
+/* SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+  /* ===== HERO ===== */
+  .hero {
+    height: auto !important;
+  }
+
+  .hero picture,
+  .hero img.hero-bg {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .hero-content {
+    padding: 12px;
+  }
+
+  .hero h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  /* ===== SECTIONS ===== */
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  /* ===== PROGRAM ===== */
+  .program-section {
+    padding: 2.5rem 0;
+  }
+
+  .program-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .program-title {
+    font-size: 1.1rem;
+  }
+
+  .program-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .program-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+  }
+
+  /* ===== BLOG ===== */
+  .video-thumb-container,
+  .blog-card img {
+    height: 180px;
+  }
+
+  .video-play-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .video-badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .blog-card .card-body h5 {
+    font-size: 1rem;
+  }
+
+  .blog-date {
+    top: 10px;
+    right: 10px;
+    padding: 8px;
+  }
+
+  .video-thumb-container .blog-date {
+    right: 70px;
+  }
+
+  .blog-date span:first-child {
+    font-size: 1.2rem;
+  }
+
+  .blog-date span:last-child {
+    font-size: 0.7rem;
+  }
+}

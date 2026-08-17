@@ -1,0 +1,28 @@
+CREATE DATABASE OdontoCare;
+
+CREATE TABLE IF NOT EXISTS publicacoes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(255) NOT NULL,
+  autor VARCHAR(100),
+  tempo_leitura VARCHAR(50),
+  media VARCHAR(255) NULL,
+  media_type ENUM('image', 'video') NULL,
+  conteudo TEXT,
+  data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  destaque BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE IF NOT EXISTS contatos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20),
+    mensagem TEXT NOT NULL,
+    data_contato DATETIME NOT NULL,
+    lido TINYINT DEFAULT 0
+);
+
+CREATE TABLE administrador (
+	id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    password VARCHAR(255) NOT NULL
+);

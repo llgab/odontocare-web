@@ -1,0 +1,103 @@
+# ===========================================
+# Enable URL Rewriting
+# ===========================================
+Options +FollowSymLinks
+RewriteEngine On
+
+# ===========================================
+# Ensure proper character encoding for URLs (fix accents)
+# ===========================================
+AddDefaultCharset UTF-8
+
+# ===========================================
+# Force non-www and HTTPS (comment out on localhost)
+# ===========================================
+# RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+# RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ===========================================
+# Case normalization for OdontoCare
+# Redirect lowercase /odontocare/ → /OdontoCare/
+# ===========================================
+RewriteCond %{REQUEST_URI} ^/aluno/OdontoCare [NC]
+RewriteRule ^aluno/odontocare/(.*)$ /aluno/OdontoCare/$1 [L,R=301]
+
+# ===========================================
+# Custom error 404 page
+# ===========================================
+ErrorDocument 404 /404.php
+
+# ===========================================
+# PROTECTION RULES - Block access to sensitive areas
+# ===========================================
+
+# Block direct access to app/views
+RewriteCond %{REQUEST_URI} ^/app/views/ [NC]
+RewriteRule ^ - [F,L]
+
+# Block direct access to app/core EXCEPT allowed files and uploads
+RewriteCond %{REQUEST_URI} ^/app/core/ [NC]
+RewriteCond %{REQUEST_URI} !^/app/core/(uploads/|blog_functions\.php|auth\.php) [NC]
+RewriteRule ^ - [F,L]
+
+# Allow access to uploads folder (images)
+RewriteCond %{REQUEST_URI} ^/app/core/uploads/ [NC]
+RewriteRule ^ - [L]
+
+# Allow access to specific PHP files in core
+RewriteCond %{REQUEST_URI} ^/app/core/(blog_functions|auth)\.php [NC]
+RewriteRule ^ - [L]
+
+# ===========================================
+# Main routing rule (Clean URLs)
+# ===========================================
+# Serve existing files/folders directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise, route to index.php
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+
+# ===========================================
+# Security & Performance Headers
+# ===========================================
+Options -Indexes
+
+# Disable ETag (reduces caching issues)
+<IfModule mod_headers.c>
+  Header unset ETag
+  FileETag None
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# ===========================================
+# Browser Caching for Static Assets
+# ===========================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresDefault "access plus 1 week"
+</IfModule>
+
+# ===========================================
+# Hide sensitive files
+# ===========================================
+<FilesMatch "^(\.htaccess|\.env|config\.php)$">
+  Require all denied
+</FilesMatch>

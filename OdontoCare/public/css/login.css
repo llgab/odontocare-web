@@ -1,0 +1,123 @@
+/* Default (desktop first) */
+body {
+    background: linear-gradient(135deg, #07406d 0%, #8bcda7 100%);
+    min-height: 100dvh; /* dynamic vh works better on mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    padding: 3rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #07406d 0%, #8bcda7 100%);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form-control {
+    border-radius: 12px;
+    padding: 12px 20px;
+    border: 2px solid #e9ecef;
+}
+
+.form-control:focus {
+    border-color: #07406d;
+    box-shadow: 0 0 0 0.2rem rgba(7, 64, 109, 0.25);
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+   ========================== */
+
+/* TABLET (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .login-card {
+        padding: 2.5rem;
+        max-width: 360px;
+    }
+
+    .logo img {
+        height: 55px;
+    }
+}
+
+/* MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        min-height: 100dvh;
+    }
+
+    .login-card {
+        padding: 2rem;
+        width: 100%;
+        max-width: 350px;
+        margin: auto;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .btn-login {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+}
+
+/* SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+        min-height: 100dvh;
+    }
+
+    .login-card {
+        padding: 1.5rem;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .btn-login {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .form-control {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+}

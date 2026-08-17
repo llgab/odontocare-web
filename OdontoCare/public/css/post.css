@@ -1,0 +1,320 @@
+/* ===== POST PAGE SPECIFIC STYLES ===== */
+
+/* POST HEADER */
+.post-header {
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.post-title {
+  color: var(--primary);
+  line-height: 1.2;
+  font-weight: 700;
+  font-size: 2.5rem !important;
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  font-size: 1rem;
+}
+
+/* POST FEATURED MEDIA */
+.post-featured-media {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.post-featured-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Video container styles - REMOVED BLACK BARS */
+.video-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: transparent; /* Remove black background */
+}
+
+.video-container video {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* Change from 'contain' to 'cover' to remove black bars */
+  display: block;
+  background: transparent; /* Ensure no background color */
+}
+
+.image-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Media type badge */
+.media-type-badge .badge {
+  background: var(--primary);
+  color: white;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+/* POST CONTENT */
+.post-content {
+  line-height: 1.8;
+}
+
+.content-wrapper {
+  max-width: 100%;
+}
+
+.content {
+  color: var(--text-dark);
+  font-size: 1.125rem;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+.content h2 {
+  color: var(--primary);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.content h3 {
+  color: var(--primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.content ul, .content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+.content blockquote {
+  border-left: 4px solid var(--secondary);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  background: var(--primary-light);
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  color: var(--text-dark);
+}
+
+/* SOCIAL SHARE */
+.social-share .btn {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary) !important; /* Use primary color instead of green */
+  border-color: var(--primary) !important;
+  color: white !important;
+}
+
+.social-share .btn:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+/* TABLET (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .post-title {
+    font-size: 2.2rem !important;
+  }
+  
+  .post-featured-image img,
+  .video-container video,
+  .image-container img {
+    height: 350px;
+  }
+  
+  .content {
+    font-size: 1.1rem;
+  }
+  
+  .content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .content h3 {
+    font-size: 1.4rem;
+  }
+  
+  .post-meta {
+    font-size: 0.95rem;
+    flex-wrap: nowrap;
+    gap: 2rem;
+  }
+}
+
+/* MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .post-featured-image img,
+  .video-container video,
+  .image-container img {
+    height: 250px;
+  }
+  
+  .content {
+    font-size: 1rem;
+  }
+  
+  .content h2 {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+  }
+  
+  .content h3 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+  }
+  
+  .post-meta {
+    font-size: 0.9rem;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .social-share .btn {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 44px !important;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+  }
+  
+  .social-share {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .post-footer .row {
+    text-align: center;
+  }
+  
+  .post-footer .col-md-6 {
+    margin-bottom: 1rem;
+  }
+
+  .media-type-badge .badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+}
+
+/* SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+  .post-title {
+    font-size: 1.6rem !important;
+  }
+  
+  .post-featured-image img,
+  .video-container video,
+  .image-container img {
+    height: 200px;
+  }
+  
+  .content {
+    font-size: 0.95rem;
+  }
+  
+  .content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .post-meta {
+    font-size: 0.85rem;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .social-share .btn {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 42px !important;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+  }
+  
+  .content ul, .content ol {
+    padding-left: 1.5rem;
+  }
+  
+  .content blockquote {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .media-type-badge .badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+}
+
+/* REMOVED video-specific gradient and control styling */
+.video-container {
+  position: relative;
+}
+
+/* Remove the gradient overlay */
+.video-container::before {
+  display: none;
+}
+
+/* Remove custom video control styling */
+.video-container video::-webkit-media-controls-panel {
+  background: transparent; /* Remove gradient background */
+}
+
+.video-container video::-webkit-media-controls-play-button {
+  background-color: transparent; /* Remove green background */
+  border-radius: 2px; /* Reset to default */
+}
+
+.video-container video::-webkit-media-controls-current-time-display,
+.video-container video::-webkit-media-controls-time-remaining-display {
+  color: inherit; /* Use default colors */
+  text-shadow: none; /* Remove text shadow */
+}

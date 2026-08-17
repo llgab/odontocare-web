@@ -5,7 +5,6 @@ requireAdminLogin();
 require_once __DIR__ . "/../core/blog_functions.php";
 
 // To access/Para acessar: OdontoCare/login
-// Password/Senha: odontocare!@3
 
 $baseUrl = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
 if ($baseUrl === '' || $baseUrl === '.') $baseUrl = '';

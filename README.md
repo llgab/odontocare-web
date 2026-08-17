@@ -1,6 +1,7 @@
 # OdontoCare - Web System & Blog
 
 > **⚠️ Aviso Legal:** Este projeto (OdontoCare) é uma clínica odontológica fictícia criada estritamente para fins educacionais e como projeto de portfólio de desenvolvimento web. Nenhuma clínica, profissional ou serviço mencionado aqui é real.
+
 > **⚠️ Disclaimer:** OdontoCare is a fictional dental clinic created strictly for educational purposes and as a web development portfolio project. All names and services are illustrative and do not represent a real business.
 
 ## Português

@@ -4,7 +4,7 @@
 
 > **⚠️ Disclaimer:** OdontoCare is a fictional dental clinic created strictly for educational purposes and as a web development portfolio project. All names and services are illustrative and do not represent a real business.
 
-## Site OdontoCare
+## Site de clínica odontológica
 
 O **OdontoCare** é uma aplicação web completa desenvolvida como projeto de portfólio, simulando o ambiente digital de uma clínica odontológica moderna. O projeto une um site institucional elegante e responsivo a um sistema dinâmico de gerenciamento de conteúdo (CMS) construído do zero.
 
@@ -14,14 +14,14 @@ O **OdontoCare** é uma aplicação web completa desenvolvida como projeto de po
 - **Blog Dinâmico (CRUD):** Criação, edição, exclusão e destaque de artigos.
 - **Gestão de Mídia Avançada:** Suporte para upload e validação de imagens (JPG, PNG, WEBP) e vídeos (MP4, WEBM) diretamente no painel.
 
-### OdontoCare Website
+### Tecnologias Utilizadas
 - **Front-end:** HTML5, CSS3, JavaScript, Bootstrap
 - **Back-end:** PHP (utilizando PDO para segurança contra SQL Injection)
 - **Banco de Dados:** MySQL
 
 ---
 
-## English
+## Dental Clinic Website
 
 **OdontoCare** is a full-stack web application developed as a portfolio project, simulating the digital environment of a modern dental clinic. The project combines an elegant, responsive institutional website with a custom-built, dynamic Content Management System (CMS).
 

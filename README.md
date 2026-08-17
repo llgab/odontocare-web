@@ -36,10 +36,10 @@ O **OdontoCare** é uma aplicação web completa desenvolvida como projeto de po
 - **Back-end:** PHP (using PDO for SQL Injection prevention)
 - **Database:** MySQL
 
-### Demonstração do Projeto (Vídeos)
+### Demonstração do Projeto / Project Demonstration
 
 **Versão Desktop:**
-<video src="assets/Desktop.mp4" controls="controls" width="100%"></video>
+<video src="assets/desktop.mp4" controls="controls" width="100%"></video>
 
 **Versão Mobile:**
-<video src="assets/Mobile.mp4" controls="controls" width="40%"></video>
+<video src="assets/mobile.mp4" controls="controls" width="40%"></video>

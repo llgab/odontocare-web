@@ -39,7 +39,7 @@ O **OdontoCare** é uma aplicação web completa desenvolvida como projeto de po
 ### Demonstração do Projeto / Project Demonstration
 
 **Desktop:**
-<video src="https://raw.githubusercontent.com/llgab/odontocare-web/main/assets/desktop.mp4" controls="controls" width="100%"></video>
+![Vídeo Desktop](assets/desktop.mp4)
 
 **Mobile:**
-<video src="https://raw.githubusercontent.com/llgab/odontocare-web/main/assets/mobile.mp4" controls="controls" width="40%"></video>
+![Vídeo Mobile](assets/mobile.mp4)

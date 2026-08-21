@@ -43,9 +43,11 @@ O **OdontoCare** é uma aplicação web completa desenvolvida como projeto de po
 ### Demonstração do Projeto / Project Demonstration
 
 **Desktop:**
+
 https://github.com/user-attachments/assets/472c0ead-e9ee-4710-9ad0-833e8e171875
 
 **Mobile:**
+
 https://github.com/user-attachments/assets/503c6179-c4d8-4940-9db2-5c3fb8698781
 
 
